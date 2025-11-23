@@ -1,0 +1,38 @@
+{
+    "name": "@almighty-shogun/prototype-extensions",
+    "description": "A small package that adds extensions to existing prototypes like string, array, etc.",
+    "version": "0.0.0",
+    "type": "module",
+    "license": "MIT",
+    "scripts": {
+        "build": "tsc"
+    },
+    "publishConfig": {
+        "access": "public",
+        "provenance": true
+    },
+    "author": {
+        "name": "Almighty-Shogun",
+        "email": "alm1ghtyshogun1998@gmail.com",
+        "url": "https://shogun.ms"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Almighty-Shogun/packages.git",
+        "directory": "packages/prototype-extensions"
+    },
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "typings": "./dist/index.d.ts",
+    "sideEffects": false,
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "default": "./dist/index.js"
+        }
+    },
+    "files": [
+        "src",
+        "dist"
+    ]
+}
