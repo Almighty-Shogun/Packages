@@ -36,6 +36,6 @@ export default async function (latitude: number, longitude: number): Promise<Wea
             },
             weatherCode: hourly.weather_code[index],
             icon: getWeatherIcon(hourly.weather_code[index], [time, daily.sunrise[0], daily.sunset[0]])
-        })).filter(hour => DateTime.fromISO(hour.time) >= DateTime.fromISO(current.time).startOf("hour"))
+        })).filter(hour => DateTime.fromISO(hour.time) > DateTime.fromISO(current.time).startOf("hour"))
     };
 }
