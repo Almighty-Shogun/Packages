@@ -1,5 +1,9 @@
+import getCorrectLocale from './internal/getCorrectLocale'
+
 export default function (value: number, locale?: string): string {
-    return new Intl.NumberFormat(locale ?? navigator.language ?? "en", {
+    const localization = getCorrectLocale(locale);
+
+    return new Intl.NumberFormat(localization, {
         style: "percent",
         maximumFractionDigits: 1,
         minimumFractionDigits: 0
