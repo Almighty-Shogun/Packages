@@ -1,15 +1,23 @@
-export type Country = {
+export type Language = {
     name: string;
     code: string;
     flag: { plain: string; rounded: string; };
 };
 
-export type CountryCode = keyof typeof countriesMap;
-export type LocalizationCountries = Record<CountryCode, Country>;
+export type LanguageCode = keyof typeof languagesMap;
+export type LocalizationCountries = Record<LanguageCode, Language>;
 
-const countriesMap: Record<string, Country> = {
+const languagesMap: Record<string, Language> = {
+    en: {
+        name: "English",
+        code: "en",
+        flag: {
+            plain: "images/country-flags/flag-united-kingdom",
+            rounded: "images/country-flags/rounded/flag-united-kingdom",
+        }
+    },
     nl: {
-        name: "Netherlands",
+        name: "Dutch",
         code: "nl",
         flag: {
             plain: "images/country-flags/flag-netherlands",
@@ -17,7 +25,7 @@ const countriesMap: Record<string, Country> = {
         }
     },
     fr: {
-        name: "France",
+        name: "French",
         code: "fr",
         flag: {
             plain: "images/country-flags/flag-france",
@@ -25,7 +33,7 @@ const countriesMap: Record<string, Country> = {
         }
     },
     de: {
-        name: "Germany",
+        name: "German",
         code: "de",
         flag: {
             plain: "images/country-flags/flag-germany",
@@ -33,7 +41,7 @@ const countriesMap: Record<string, Country> = {
         }
     },
     pl: {
-        name: "Poland",
+        name: "Polish",
         code: "pl",
         flag: {
             plain: "images/country-flags/flag-poland",
@@ -42,12 +50,12 @@ const countriesMap: Record<string, Country> = {
     }
 };
 
-export const countries: LocalizationCountries = countriesMap as LocalizationCountries;
+export const languages: LocalizationCountries = languagesMap as LocalizationCountries;
 
-export function getCountry(code: CountryCode): Country | null {
-    return countries[code] ?? null;
+export function getLanguage(code: LanguageCode): Language|null {
+    return languages[code] ?? null;
 }
 
-export function getCountries(): Country[] {
-    return Object.values(countries);
+export function getLanguages(): Language[] {
+    return Object.values(languages);
 }
